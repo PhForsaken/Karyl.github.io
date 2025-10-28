@@ -14,20 +14,22 @@ body {
 
 .collage {
   display: grid;
-  place-items: center;
-  gap: 1.5rem;
-  padding: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  justify-items: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem 2rem;
   position: relative;
 }
 
+/* --- PHOTO POLAROID STYLE --- */
 .photo {
   position: relative;
   background: #fff;
-  border: 8px solid #fff;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-  transform: rotate(-2deg);
-  border-radius: 8px;
-  width: 260px;
+  border: 10px solid #fff;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  width: 280px;
   transition: all 0.4s ease;
 }
 
@@ -38,64 +40,73 @@ body {
 .photo img {
   width: 100%;
   height: auto;
-  display: block;
-  border-radius: 6px;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
+/* Specific photo rotations and sizes */
 #photo1 {
-  transform: rotate(-4deg);
-}
-#photo2 {
-  transform: rotate(3deg);
-}
-#photo3 {
-  transform: rotate(-1deg);
+  transform: rotate(-5deg);
 }
 
+#photo2 {
+  transform: rotate(4deg);
+}
+
+#photo3 {
+  transform: rotate(-2deg);
+  width: 320px; /* slightly wider for Spotify bar */
+}
+
+/* --- SPOTIFY BAR UNDER PHOTO 3 --- */
 .spotify {
   position: absolute;
-  bottom: -35px;
+  bottom: -40px;
   left: 50%;
   transform: translateX(-50%);
   background: #fff;
-  border-radius: 10px;
-  padding: 6px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  padding: 6px 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
 .spotify img {
-  width: 150px;
+  width: 160px;
+  height: auto;
 }
 
+/* --- QR CODES --- */
 .qr {
   position: absolute;
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 110px;
 }
 
 .qr.left {
-  left: 10%;
-  bottom: 15%;
+  left: 8%;
+  bottom: 18%;
 }
 
 .qr.right {
-  right: 10%;
-  bottom: 15%;
+  right: 8%;
+  bottom: 18%;
 }
 
 .qr img {
   width: 100%;
   height: 100%;
+  border-radius: 10px;
 }
 
+/* --- FLOATING FLOWER BACKGROUND --- */
 .flowers-bg::before,
 .flowers-bg::after {
   content: '';
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: 320px;
+  height: 320px;
   background: url('') no-repeat center/contain;
-  opacity: 0.2;
+  opacity: 0.25;
   animation: float 8s ease-in-out infinite alternate;
 }
 
@@ -115,15 +126,25 @@ body {
   to { transform: translateY(-20px); }
 }
 
-/* Responsive */
+/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
   .collage {
     grid-template-columns: 1fr;
+    gap: 3rem;
   }
+
+  #photo3 {
+    width: 90%;
+  }
+
   .qr.left, .qr.right {
     position: static;
     display: flex;
     justify-content: center;
     margin: 1rem 0;
+  }
+
+  .spotify img {
+    width: 130px;
   }
 }
