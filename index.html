@@ -1,88 +1,24 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>For the Cutest Lady — Scrapbook</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For the Cutest Lady 💖</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="page-wrapper">
-    <section class="card">
-      <header class="card-header">
-        <h1 class="title">For the Cutest Lady</h1>
-        <p class="subtitle">Take care always, I love you 💖</p>
-      </header>
+  <div class="background"></div>
 
-      <div class="collage">
-        <!-- polaroid 1 -->
-        <div class="polaroid p1">
-          <div class="photo" data-index="0">
-            <img alt="Photo 1 placeholder" />
-            <input type="file" accept="image/*" class="file-input" />
-          </div>
-          <div class="caption">memories</div>
-          <div class="tape tape-top"></div>
-        </div>
+  <div class="overlay">
+    <h1>For the Cutest Lady 💝</h1>
+    <p>Take care always, I love you 💗</p>
+  </div>
 
-        <!-- polaroid 2 -->
-        <div class="polaroid p2">
-          <div class="photo" data-index="1">
-            <img alt="Photo 2 placeholder" />
-            <input type="file" accept="image/*" class="file-input" />
-          </div>
-          <div class="caption">best day</div>
-          <div class="tape tape-left"></div>
-        </div>
-
-        <!-- polaroid 3 -->
-        <div class="polaroid p3">
-          <div class="photo" data-index="2">
-            <img alt="Photo 3 placeholder" />
-            <input type="file" accept="image/*" class="file-input" />
-          </div>
-          <div class="caption">sweet</div>
-          <div class="tape tape-bottom"></div>
-        </div>
-
-        <!-- QR placeholder -->
-        <div class="qr-box">
-          <div class="qr-inner" title="Scan me or replace with your QR">
-            <svg viewBox="0 0 100 100" class="qr-svg" aria-hidden="true">
-              <rect x="6" y="6" width="28" height="28" rx="2"></rect>
-              <rect x="66" y="6" width="28" height="28" rx="2"></rect>
-              <rect x="6" y="66" width="28" height="28" rx="2"></rect>
-              <rect x="36" y="36" width="28" height="28"></rect>
-              <rect x="66" y="66" width="10" height="10"></rect>
-              <rect x="82" y="66" width="6" height="6"></rect>
-            </svg>
-          </div>
-          <div class="qr-caption">QR code</div>
-        </div>
-      </div>
-
-      <footer class="card-footer">
-        <button id="downloadBtn" class="btn">Download as image</button>
-        <label class="music-toggle">
-          <input id="musicCheckbox" type="checkbox" />
-          <span>background music</span>
-        </label>
-      </footer>
-
-      <!-- decorative floating hearts -->
-      <div class="floaters" aria-hidden="true">
-        <div class="heart h1">❤</div>
-        <div class="heart h2">❤</div>
-        <div class="heart h3">❤</div>
-      </div>
-
-      <!-- optional audio (not autoplay) -->
-      <audio id="bgMusic" loop>
-        <source src="" type="audio/mpeg" />
-        <!-- Leave src blank; user can add a file via developer tools or replace path -->
-      </audio>
-    </section>
-  </main>
+  <!-- Optional background music -->
+  <!-- Replace src with your .mp3 or base64 data -->
+  <!-- <audio autoplay loop>
+    <source src="yourmusic.mp3" type="audio/mpeg" />
+  </audio> -->
 
   <script src="script.js"></script>
 </body>
